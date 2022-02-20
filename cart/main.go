@@ -56,10 +56,10 @@ func main() {
 	db.SingularTable(true)
 
 	//第一次初始化
-	err = repository.NewCartRepository(db).InitTable()
-	if err != nil {
-		log.Error(err)
-	}
+	//err = repository.NewCartRepository(db).InitTable()
+	//if err != nil {
+	//	log.Error(err)
+	//}
 
 	// New Service
 	service := micro.NewService(

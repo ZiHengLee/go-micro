@@ -1,6 +1,8 @@
 package main
 
 import (
+	"cart/common"
+	go_micro_service_cart "cart/proto/cart"
 	"context"
 	"fmt"
 	"github.com/afex/hystrix-go/hystrix"
@@ -9,15 +11,14 @@ import (
 	log "github.com/micro/go-micro/v2/logger"
 	"github.com/micro/go-micro/v2/registry"
 	consul2 "github.com/micro/go-plugins/registry/consul/v2"
+	"github.com/micro/go-plugins/wrapper/select/roundrobin/v2"
 	opentracing2 "github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
 	"github.com/opentracing/opentracing-go"
-	"go-micro/cart/common"
-	go_micro_service_cart "go-micro/cart/proto/cart"
 	"go-micro/cartApi/handler"
 	"net"
 	"net/http"
 
-	cartApi "git.imooc.com/qnhyn/cartApi/proto/cartApi"
+	cartApi "go-micro/cartApi/proto/cartApi"
 )
 
 func main() {

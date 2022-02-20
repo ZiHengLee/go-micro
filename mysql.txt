@@ -10,3 +10,7 @@ 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
 
 
 https://github.com/lihuawei321/go-micro.git
+
+docker run --rm -p 8090:8090 microhq/micro --registry=consul --registry_address=127.0.0.1:8500 api --handler=api
+
+docker run --rm -p 8090:8090 progrium/consul --registry=consul --registry_address=127.0.0.1:8500 api --handler=api

@@ -1,11 +1,11 @@
 package handler
 
 import (
+	cart "cart/proto/cart"
 	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
-	cart "github.com/lihuawei321/go-micro/cart"
 	log "github.com/micro/go-micro/v2/logger"
 	cartApi "go-micro/cartApi/proto/cartApi"
 	"strconv"
@@ -30,7 +30,7 @@ func (e *CartApi) FindAll(ctx context.Context, req *cartApi.Request, rsp *cartAp
 		return err
 	}
 	//获取购物车所有商品
-	cartAll, err := e.CartService.GetAll(context.TODO(), &CartFindAll{UserId: userId})
+	cartAll, err := e.CartService.GetAll(context.TODO(), &cart.CartFindAll{UserId: userId})
 	//数据类型转化
 	b, err := json.Marshal(cartAll)
 	if err != nil {
