@@ -3,15 +3,12 @@ module go-micro/cartApi
 go 1.17
 
 require (
-	github.com/golang/protobuf v1.5.2
+	github.com/golang/protobuf v1.4.3
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/micro/micro/v3 v3.9.0
-	github.com/prometheus/common v0.6.0
 )
 
 require (
-	github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc // indirect
-	github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -24,7 +21,6 @@ require (
 	github.com/hashicorp/go-version v1.2.1 // indirect
 	github.com/hpcloud/tail v1.0.0 // indirect
 	github.com/improbable-eng/grpc-web v0.13.0 // indirect
-	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/miekg/dns v1.1.27 // indirect
 	github.com/nightlyone/lockfile v1.0.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
@@ -35,7 +31,6 @@ require (
 	github.com/rs/cors v1.7.0 // indirect
 	github.com/russross/blackfriday/v2 v2.0.1 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	github.com/sirupsen/logrus v1.4.2 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
 	github.com/stretchr/objx v0.1.1 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
@@ -50,9 +45,10 @@ require (
 	golang.org/x/text v0.3.3 // indirect
 	google.golang.org/genproto v0.0.0-20200806141610-86f49bd18e98 // indirect
 	google.golang.org/grpc v1.40.0 // indirect
-	google.golang.org/protobuf v1.26.0 // indirect
-	gopkg.in/alecthomas/kingpin.v2 v2.2.6 // indirect
+	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
 )
+
+replace go-micro/cart => github.com/lihuawei321/go-micro/cart v0.0.0-20220220141036-fc06c15d5501 // indirect
