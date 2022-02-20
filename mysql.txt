@@ -5,4 +5,8 @@ docker run -d --name jaeger -p 6831:6831/udp -p 16686:16686 cap1573/jaeger
 
 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
 
-git remote set-url origin  https://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@github.com/lihuawei321/go-micro-study.git/
+git remote set-url origin  https://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@github.com/lihuawei321/go-micro.git/
+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
+
+
+https://github.com/lihuawei321/go-micro.git
