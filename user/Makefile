@@ -13,8 +13,8 @@ api:
 
 .PHONY: proto
 proto:
-    # sudo docker run --rm -v $(shell pwd):$(shell pwd) -w $(shell pwd)  znly/protoc -I ./ --go_out=./ --micro_out=./  ./proto/user/*.proto
-	# protoc --proto_path=. --micro_out=. --go_out=:. proto/user.proto
+    sudo docker run --rm -v $(shell pwd):$(shell pwd) -w $(shell pwd)  znly/protoc -I ./ --go_out=./ --micro_out=./  ./proto/user/*.proto
+	protoc --proto_path=. --micro_out=. --go_out=:. proto/user.proto
 	
 .PHONY: build
 build:

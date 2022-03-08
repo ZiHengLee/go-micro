@@ -25,10 +25,10 @@ var (
 
 func main() {
 	// 1.配置中心
-	consulConfig, err := common.GetConsulConfig("localhost", 8500, "/micro/config")
-	if err != nil {
-		log.Error(err)
-	}
+	//consulConfig, err := common.GetConsulConfig("localhost", 8500, "/micro/config")
+	//if err != nil {
+	//	log.Error(err)
+	//}
 	// 2.注册中心
 	consul := consul2.NewRegistry(func(options *registry.Options) {
 		options.Addrs = []string{
@@ -43,8 +43,9 @@ func main() {
 	defer io.Close()
 	opentracing.SetGlobalTracer(t)
 	// 4.初始化数据库
-	mysqlInfo := common.GetMysqlFromConsul(consulConfig, "mysql")
-	db, err := gorm.Open("mysql", mysqlInfo.User+":"+mysqlInfo.Pwd+"@/"+mysqlInfo.Database+"?charset=utf8&parseTime=True&loc=Local")
+	//mysqlInfo := common.GetMysqlFromConsul(consulConfig, "mysql")
+	user,pwd,database := "root","lijun950702","domesticDB"
+	db, err := gorm.Open("mysql", user+":"+pwd+"@/"+database+"?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Error(err)
 	}
@@ -60,7 +61,7 @@ func main() {
 	orderDataService := service2.NewOrderDataService(repository.NewOrderRepository(db))
 
 	// 5.暴露监控地址
-	common.PrometheusBoot(9092)
+	common.PrometheusBoot(9090)
 
 	// New Service
 	service := micro.NewService(

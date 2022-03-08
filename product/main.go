@@ -50,7 +50,7 @@ func main() {
 	db.SingularTable(true)
 
 	//初始化
-	//repository.NewProductRepository(db).InitTable()
+	repository.NewProductRepository(db).InitTable()
 
 	productDataService := service2.NewProductDataService(repository.NewProductRepository(db))
 

@@ -36,7 +36,7 @@ func main() {
 	//创建服务实例
 	userDataService := service2.NewUserDataService(repository.NewUserRepository(db))
 	//注册handler
-	err = user.RegisterUserHandler(srv.Server(), &handler.User{UserDataService: userDataService})
+	_ = user.RegisterUserHandler(srv.Server(), &handler.User{UserDataService: userDataService})
 	if err != nil {
 		fmt.Println(err)
 	}
